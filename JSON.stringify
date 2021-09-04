@@ -1,0 +1,45 @@
+const user = {
+ “name” : “Prateek Singh”,
+ “age” : 26
+}
+console.log(JSON.stringify(user));
+// RESULT
+// "{ "name" : "Prateek Singh", "age" : 26 }"
+
+// In ra 1 phần tử trong đối tượng
+const product = {
+  id: 1,
+  "name": "name1"
+}
+
+console.log (JSON.stringify (product , ['name'] );
+// RESULT
+// { "name": "name1" }
+
+const user = { 
+“name”: “Prateek Singh”, 
+“age”: 26 
+}
+
+JSON.stringify( user, (key, value) => {
+  if (typeof value === 'string') {
+    return undefined;
+  }
+  return value;
+});
+
+// RESULT
+// { "age": 26}
+
+const user = { 
+firstName: "Prateek", 
+lastName: "Singh", 
+age: 26, 
+ toJSON () { 
+    return { 
+      fullName: `$ {this.firstName} + $ {this.lastName}` 
+    };
+}
+console.log (JSON.stringify (người dùng));
+// RESULT
+// "{" fullName ":" Prateek Singh "}"
